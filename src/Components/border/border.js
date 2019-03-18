@@ -5,12 +5,18 @@ import Object from './object'
 class BorderController extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      objectStyles: {
+        height: 300,
+        width: 300,
+        backgroundColor: 'red'
+      },
+    }
   }
 
   render() {
     return(
-      <Object />
+      <Object objectStyles={this.state.objectStyles}/>
     );
   }
 }

@@ -1,17 +1,10 @@
 import React from 'react';
 
-function Object() {
-
-  const styles = {
-    height: 300,
-    width: 300,
-    backgroundColor: 'red'
-  }
-
+function Object(props) {
   return(
     <div 
       className="renderObject"
-      style={styles}
+      style={props.objectStyles}
     />
   );
 };
