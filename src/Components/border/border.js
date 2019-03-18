@@ -1,22 +1,38 @@
 import React, { Component } from 'react';
 
-import Object from './object'
+import Object from './object';
+import Slider from './slider';
 
 class BorderController extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      objectStyles: {
-        height: 300,
-        width: 300,
-        backgroundColor: 'red'
-      },
+      borderRadius: 0
+      }
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.changeBorderRadius = this.changeBorderRadius.bind(this);
     }
+
+  handleSubmit(event) {
+    event.preventDefault();
+  }
+
+  changeBorderRadius(event) {
+    this.setState({
+      borderRadius: event.target.value
+    })
   }
 
   render() {
     return(
-      <Object objectStyles={this.state.objectStyles}/>
+      <div className="container">
+        <Object borderRadius={this.state.borderRadius} />
+        <Slider 
+          handleSubmit={this.handleSubmit}
+          changeBorderRadius={this.changeBorderRadius}
+        />
+      </div>
     );
   }
 }
