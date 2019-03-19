@@ -7,11 +7,11 @@ class BorderController extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      borderRadiusAll: 0,
-      borderRadiusTopLeft: 0,
-      borderRadiusTopRight: 0,
-      borderRadiusBottomRight: 0,
-      borderRadiusBottomLeft: 0
+      borderRadiusAll: 10,
+      borderRadiusTopLeft: 10,
+      borderRadiusTopRight: 10,
+      borderRadiusBottomRight: 10,
+      borderRadiusBottomLeft: 10
       }
 
     this.changeAllBorderRadius = this.changeAllBorderRadius.bind(this);
@@ -19,11 +19,11 @@ class BorderController extends Component {
     this.changeTopRightBorderRadius = this.changeTopRightBorderRadius.bind(this);
     this.changeBottomRightBorderRadius = this.changeBottomRightBorderRadius.bind(this);
     this.changeBottomLeftBorderRadius = this.changeBottomLeftBorderRadius.bind(this);
-    this.nullCheck = this.nullCheck.bind(this);
+    this.setAll = this.setAll.bind(this);
     }
 
-  nullCheck(event) {
-    return event.target.value === null;
+  setAll(event) {
+    
   }
 
   changeAllBorderRadius(event) {
@@ -33,7 +33,7 @@ class BorderController extends Component {
       borderRadiusTopRight: event.target.value,
       borderRadiusBottomRight: event.target.value,
       borderRadiusBottomLeft: event.target.value
-    }) 
+    })
   }
 
   changeTopLeftBorderRadius(event) {
