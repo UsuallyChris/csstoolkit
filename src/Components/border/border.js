@@ -7,30 +7,35 @@ class BorderController extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      borderRadius: 0
+      borderRadiusTopLeft: 0,
+      borderRadiusTopRight: 0,
+      borderRadiusBottomRight: 0,
+      borderRadiusBottomLeft: 0
       }
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.changeBorderRadius = this.changeBorderRadius.bind(this);
+    this.changeAllBorderRadius = this.changeAllBorderRadius.bind(this);
     }
 
-  handleSubmit(event) {
-    event.preventDefault();
-  }
-
-  changeBorderRadius(event) {
+  changeAllBorderRadius(event) {
     this.setState({
-      borderRadius: event.target.value
+      borderRadiusTopLeft: event.target.value,
+      borderRadiusTopRight: event.target.value,
+      borderRadiusBottomRight: event.target.value,
+      borderRadiusBottomLeft: event.target.value
     })
   }
 
   render() {
     return(
       <div className="container">
-        <Object borderRadius={this.state.borderRadius} />
-        <Slider 
-          handleSubmit={this.handleSubmit}
-          changeBorderRadius={this.changeBorderRadius}
+        <Object
+          borderRadiusTopLeft={this.state.borderRadiusTopLeft}
+          borderRadiusTopRight={this.state.borderRadiusTopRight}
+          borderRadiusBottomRight={this.state.borderRadiusBottomRight}
+          borderRadiusBottomLeft={this.state.borderRadiusBottomLeft}
+        />
+        <Slider
+          changeAllBorderRadius={this.changeAllBorderRadius}
         />
       </div>
     );
