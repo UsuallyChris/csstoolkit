@@ -7,6 +7,7 @@ class BorderController extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      borderRadiusAll: 0,
       borderRadiusTopLeft: 0,
       borderRadiusTopRight: 0,
       borderRadiusBottomRight: 0,
@@ -18,15 +19,21 @@ class BorderController extends Component {
     this.changeTopRightBorderRadius = this.changeTopRightBorderRadius.bind(this);
     this.changeBottomRightBorderRadius = this.changeBottomRightBorderRadius.bind(this);
     this.changeBottomLeftBorderRadius = this.changeBottomLeftBorderRadius.bind(this);
+    this.nullCheck = this.nullCheck.bind(this);
     }
+
+  nullCheck(event) {
+    return event.target.value === null;
+  }
 
   changeAllBorderRadius(event) {
     this.setState({
-        borderRadiusTopLeft: event.target.value,
-        borderRadiusTopRight: event.target.value,
-        borderRadiusBottomRight: event.target.value,
-        borderRadiusBottomLeft: event.target.value
-    })
+      borderRadiusAll: event.target.value,
+      borderRadiusTopLeft: event.target.value,
+      borderRadiusTopRight: event.target.value,
+      borderRadiusBottomRight: event.target.value,
+      borderRadiusBottomLeft: event.target.value
+    }) 
   }
 
   changeTopLeftBorderRadius(event) {
@@ -63,6 +70,7 @@ class BorderController extends Component {
           borderRadiusBottomLeft={this.state.borderRadiusBottomLeft}
         />
         <Slider
+          borderRadiusAll={this.state.borderRadiusAll}
           borderRadiusTopLeft={this.state.borderRadiusTopLeft}
           borderRadiusTopRight={this.state.borderRadiusTopRight}
           borderRadiusBottomRight={this.state.borderRadiusBottomRight}
