@@ -63,6 +63,10 @@ class BorderController extends Component {
           borderRadiusBottomLeft={this.state.borderRadiusBottomLeft}
         />
         <Slider
+          borderRadiusTopLeft={this.state.borderRadiusTopLeft}
+          borderRadiusTopRight={this.state.borderRadiusTopRight}
+          borderRadiusBottomRight={this.state.borderRadiusBottomRight}
+          borderRadiusBottomLeft={this.state.borderRadiusBottomLeft}
           changeAllBorderRadius={this.changeAllBorderRadius}
           changeTopLeftBorderRadius={this.changeTopLeftBorderRadius}
           changeTopRightBorderRadius={this.changeTopRightBorderRadius}
