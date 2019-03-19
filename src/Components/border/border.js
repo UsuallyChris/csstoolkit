@@ -14,13 +14,41 @@ class BorderController extends Component {
       }
 
     this.changeAllBorderRadius = this.changeAllBorderRadius.bind(this);
+    this.changeTopLeftBorderRadius = this.changeTopLeftBorderRadius.bind(this);
+    this.changeTopRightBorderRadius = this.changeTopRightBorderRadius.bind(this);
+    this.changeBottomRightBorderRadius = this.changeBottomRightBorderRadius.bind(this);
+    this.changeBottomLeftBorderRadius = this.changeBottomLeftBorderRadius.bind(this);
     }
 
   changeAllBorderRadius(event) {
     this.setState({
-      borderRadiusTopLeft: event.target.value,
-      borderRadiusTopRight: event.target.value,
-      borderRadiusBottomRight: event.target.value,
+        borderRadiusTopLeft: event.target.value,
+        borderRadiusTopRight: event.target.value,
+        borderRadiusBottomRight: event.target.value,
+        borderRadiusBottomLeft: event.target.value
+    })
+  }
+
+  changeTopLeftBorderRadius(event) {
+    this.setState({
+      borderRadiusTopLeft: event.target.value
+    })
+  }
+
+  changeTopRightBorderRadius(event) {
+    this.setState({
+      borderRadiusTopRight: event.target.value
+    })
+  }
+
+  changeBottomRightBorderRadius(event) {
+    this.setState({
+      borderRadiusBottomRight: event.target.value
+    })
+  }
+
+  changeBottomLeftBorderRadius(event) {
+    this.setState({
       borderRadiusBottomLeft: event.target.value
     })
   }
@@ -36,6 +64,10 @@ class BorderController extends Component {
         />
         <Slider
           changeAllBorderRadius={this.changeAllBorderRadius}
+          changeTopLeftBorderRadius={this.changeTopLeftBorderRadius}
+          changeTopRightBorderRadius={this.changeTopRightBorderRadius}
+          changeBottomRightBorderRadius={this.changeBottomRightBorderRadius}
+          changeBottomLeftBorderRadius={this.changeBottomLeftBorderRadius}
         />
       </div>
     );
